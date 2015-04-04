@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Arthur Hammer</string>
+	<key>Builder Version</key>
+	<string>10600.1.25</string>
+	<key>CFBundleDisplayName</key>
+	<string>Collapse Hacker News </string>
+	<key>CFBundleIdentifier</key>
+	<string>co.ahammer.hackernews-collapse</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>global.html</string>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>jquery-1.4.1.min.js</string>
+				<string>collapse.js</string>
+			</array>
+		</dict>
+		<key>Whitelist</key>
+		<array>
+			<string>https://news.ycombinator.com/item</string>
+			<string>http://news.ycombinator.com/item</string>
+		</array>
+	</dict>
+	<key>Description</key>
+	<string>Collapse Hacker News comment trees.</string>
+	<key>DeveloperIdentifier</key>
+	<string>PY49CKQ6VF</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Allowed Domains</key>
+			<array>
+				<string>news.ycombinator.com</string>
+			</array>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>Some</string>
+		</dict>
+	</dict>
+	<key>Website</key>
+	<string>https://github.com/ahammer-/hackernews-collapse.safariextension</string>
+</dict>
+</plist>
