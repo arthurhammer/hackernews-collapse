@@ -27,6 +27,15 @@
  **/
 
 
+// from: http://stackoverflow.com/a/2117523
+function guid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+}
+
+
 jQuery(function($) {
 
     var SETTINGS = {};
@@ -93,12 +102,15 @@ jQuery(function($) {
         comhead.prepend(" ", $("<span class='collapse'>[-]</span><span> </span>").css({cursor: "pointer"}).click(collapse).hover(function() { this.style.textDecoration = "underline"; }, function() { this.style.textDecoration = "none"; }));
         comhead.append(" ", $("<span class='numchildcomments'></span>"))
 
-        var id = $("a[href*=item]", comhead);
-        if (! id.length) {
-            return true;
+        var commentIDs = $("a[href*=item]", comhead);
+        var id = commentIDs[0];
+
+        if (typeof id === 'undefined' || id === null) {
+            id = guid();
         }
-        id = id[0].href;
-        id = id.substr(id.indexOf("=") + 1);
+        else {
+            id = commentIDs[0].href.substr(id.indexOf("=") + 1);
+        }
 
         $this.addClass("comment-" + id).data("comment", id);
         parents[level] = id;
