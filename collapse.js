@@ -1,6 +1,5 @@
 /**
- * Hacker News Collapsible Threads Bookmarklet companion script
- * Original script by Alexander Kirk, http://alexander.kirk.at/
+ * Based on a script by Alexander Kirk:
  * http://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/
  *
  * Permission is hereby granted, free of charge, to any person
@@ -65,9 +64,11 @@ jQuery(function($) {
             // Expand all child comments before hiding thread
             childComments
                 .find("span.collapse")
+                    // Collapse label
                     .text("[-]")
                 .end()
                 .find("span.numchildcomments")
+                    // Hide number of child comments
                     .text("")
                 .end()
                 .find("span.comhead")
@@ -76,15 +77,23 @@ jQuery(function($) {
                 .end()
                 .find("span.comhead")
                     // Expand comments
-                    .parent().siblings().not("br").show();
+                    .parent().siblings().not("br").show()
+                .end();
 
-            thread.hide();
+            // Hide thread
             $e.text("[+]");
+            thread.hide();
             votearrow.css("visibility", "hidden");
-            var numChildCommentText = "(" + childComments.length + " child" + (childComments.length == 1 ? "" : "ren") + ")";
-            numChildComments.text(SETTINGS && SETTINGS['showNumChildComments'] ? numChildCommentText : "");
+
+            if (SETTINGS && SETTINGS['showNumChildComments']) {
+                numChildComments.text(numChildCommentText);
+            }
+            else {
+                numChildComments.text("");
+            }
         }
         else {
+            // Show thread
             $e.text("[-]");
             thread.show();
             votearrow.css("visibility", "visible");
@@ -95,24 +104,38 @@ jQuery(function($) {
     var comments = $("body table table").eq(2);
     var parents = [];
 
+    // Prepare comments
     $("table", comments).each(function() {
         var $this = $(this);
         var level = Math.floor($("td img[src*='s.gif']", this)[0].width / 40);
+
         var comhead = $("span.comhead", this);
-        comhead.prepend(" ", $("<span class='collapse'>[-]</span><span> </span>").css({cursor: "pointer"}).click(collapse).hover(function() { this.style.textDecoration = "underline"; }, function() { this.style.textDecoration = "none"; }));
+        // Prepend collapse icon to comment header
+        comhead.prepend(" ", $("<span class='collapse'>[-]</span><span> </span>")
+                        .css({cursor: "pointer"})
+                        .click(collapse)
+                        .hover(function() { this.style.textDecoration = "underline"; },
+                               function() { this.style.textDecoration = "none"; }));
+        // Append number of comments
         comhead.append(" ", $("<span class='numchildcomments'></span>"))
 
+        // Extract comment IDs
         var commentIDs = $("a[href*=item]", comhead);
         var id = commentIDs[0];
 
         if (typeof id === 'undefined' || id === null) {
+            // Some comments, such as flagged ones, don't have IDs
             id = guid();
         }
         else {
-            id = commentIDs[0].href.substr(id.indexOf("=") + 1);
+            id = commentIDs[0].href;
+            id = id.substr(id.indexOf("=") + 1);
         }
 
+        // Add comment IDs
         $this.addClass("comment-" + id).data("comment", id);
+
+        // Add all parent's IDs to each comment
         parents[level] = id;
         if (level > 0) {
             for (var i = 0; i < level; i++) {

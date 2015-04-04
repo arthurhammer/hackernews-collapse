@@ -8,7 +8,7 @@ To install, open the `hackernews-collapse.safariextz` extension file. Existing t
 
 ---
 
-Based largely on [Alexander Kirk's bookmarklet for collapsing Hacker News comments](https://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/) (MIT License).
+Based on [Alexander Kirk's bookmarklet for collapsing Hacker News comments](https://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/) (MIT License).
 
 Changes to the original script:
 
@@ -16,3 +16,4 @@ Changes to the original script:
 - Align collapse buttons vertically
 - Option to hide number of child comments when collapsing
 - Fix for various layout problems where comments change their position on collapsing
+- Other bug fixes
