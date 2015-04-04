@@ -10,7 +10,7 @@ Existing tabs need to be reloaded before using the extension.
 
 ---
 
-Based on [Alexander Kirk's bookmarklet for collapsing Hacker News comments](https://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/) (MIT License).
+Based on [Alexander Kirk's bookmarklet for collapsing Hacker News comments](https://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/) (under MIT License).
 
 Changes to the original script:
 
