@@ -1,6 +1,6 @@
 /**
  * Hacker News Collapsible Threads Bookmarklet companion script
- * Copyright (c) 2010 Alexander Kirk, http://alexander.kirk.at/
+ * Original script by Alexander Kirk, http://alexander.kirk.at/
  * http://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/
  *
  * Permission is hereby granted, free of charge, to any person
@@ -24,12 +24,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
-**/
-
-/**
- * Original script modified by ahammer-, October 2014.
- * https://github.com/ahammer-/hackernews-collapse.safariextension
- */
+ **/
 
 
 jQuery(function($) {
@@ -75,6 +70,7 @@ jQuery(function($) {
                     .parent().siblings().not("br").show();
 
             thread.hide();
+            $e.text("[+]");
             votearrow.css("visibility", "hidden");
             var numChildCommentText = "(" + childComments.length + " child" + (childComments.length == 1 ? "" : "ren") + ")";
             numChildComments.text(SETTINGS && SETTINGS['showNumChildComments'] ? numChildCommentText : "");
