@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Hacker News Collapse
-// @namespace    https://github.com/ahammer-
+// @namespace    https://github.com/ahammer-/hackernews-collapse
 // @version      1.0.1
 // @description  Collapse Hacker News comment trees.
 // @author       Arthur Hammer

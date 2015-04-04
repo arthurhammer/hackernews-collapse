@@ -7,7 +7,7 @@
 	<key>Builder Version</key>
 	<string>10600.4.10.7</string>
 	<key>CFBundleDisplayName</key>
-	<string>Collapse Hacker News </string>
+	<string>Hacker News Collapse</string>
 	<key>CFBundleIdentifier</key>
 	<string>co.ahammer.hackernews-collapse</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -58,6 +58,6 @@
 		</dict>
 	</dict>
 	<key>Website</key>
-	<string>https://github.com/ahammer-/hackernews-collapse.safariextension</string>
+	<string>https://github.com/ahammer-/hackernews-collapse</string>
 </dict>
 </plist>
