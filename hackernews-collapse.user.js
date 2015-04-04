@@ -67,6 +67,7 @@ jQuery(function($) {
             votearrow.css("visibility", "hidden");
 
             if (showNumChildComments) {
+                var numChildCommentText = "(" + childComments.length + " child" + (childComments.length == 1 ? "" : "ren") + ")";
                 numChildComments.text(numChildCommentText);
             }
             else {
