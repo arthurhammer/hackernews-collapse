@@ -4,7 +4,7 @@
 
 Simple browser extension for collapsing Hacker News comment trees. Adds a collapse symbol to the left of comments.
 
-To install the Safari extension, open the `hackernews-collapse.safariextz` extension file. To install the userscript, open `hackernews-collapse.user.js` in Greasemonky or Tampermonkey.
+To install the Safari extension, open the `hackernews-collapse.safariextz` extension file. To install the userscript, open `hackernews-collapse.user.js` in Tampermonkey (not tested with Greasemonkey).
 
 Existing tabs need to be reloaded before using the extension.
 

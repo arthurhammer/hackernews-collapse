@@ -9,6 +9,10 @@
 // @grant        none
 // ==/UserScript==
 
+
+// Tested in Tampermonkey in Safari.
+
+
 /**
  * Based on a bookmarklet written by Alexander Kirk .
  *
