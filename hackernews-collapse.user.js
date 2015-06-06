@@ -3,21 +3,19 @@
 // @namespace    https://github.com/ahammer-/hackernews-collapse
 // @version      1.0.1
 // @description  Collapse Hacker News comment trees.
-// @author       Arthur Hammer
+// @author       Arthur Hammer, https://github.com/ahammer-/hackernews-collapse
 // @match        https://news.ycombinator.com/item*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js
 // @grant        none
 // ==/UserScript==
 
 
-// Tested in Tampermonkey in Safari.
-
-
 /**
- * Based on a bookmarklet written by Alexander Kirk .
+ * Based on a bookmarklet written by Alexander Kirk.
  *
- * Copyright (c) 2010 Alexander Kirk, http://alexander.kirk.at/
- * http://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2010 Alexander Kirk
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -119,18 +117,18 @@ jQuery(function($) {
         var $this = $(this);
         var level = Math.floor($("td img[src*='s.gif']", this)[0].width / 40);
 
-        var comhead = $("span.comhead", this);
+        var commentHeader = $("span.comhead", this);
         // Prepend collapse icon to comment header
-        comhead.prepend(" ", $("<span class='collapse'>[-]</span><span> </span>")
+        commentHeader.prepend(" ", $("<span class='collapse'>[-]</span><span> </span>")
                         .css({cursor: "pointer"})
                         .click(collapse)
                         .hover(function() { this.style.textDecoration = "underline"; },
                                function() { this.style.textDecoration = "none"; }));
         // Append number of comments
-        comhead.append(" ", $("<span class='numchildcomments'></span>"))
+        commentHeader.append(" ", $("<span class='numchildcomments'></span>"))
 
         // Extract comment IDs
-        var commentIDs = $("a[href*=item]", comhead);
+        var commentIDs = $("a[href*=item]", commentHeader);
         var id = commentIDs[0];
 
         if (typeof id === 'undefined' || id === null) {

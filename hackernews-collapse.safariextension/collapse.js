@@ -1,13 +1,13 @@
-/**
- * April 2015
- * https://github.com/ahammer-/hackernews-collapse
- *
- * Based on a bookmarklet written by Alexander Kirk .
- * http://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/
- **/
+// 
+//  https://github.com/ahammer-/hackernews-collapse
+//  April 2015
+//  
+//  Based on a bookmarklet by Alexander Kirk.
+//  http://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/
+//  
 
 
-// from: http://stackoverflow.com/a/2117523
+// From: http://stackoverflow.com/a/2117523
 function guid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
@@ -91,22 +91,22 @@ jQuery(function($) {
         var $this = $(this);
         var level = Math.floor($("td img[src*='s.gif']", this)[0].width / 40);
 
-        var comhead = $("span.comhead", this);
-        // Prepend collapse icon to comment header
-        comhead.prepend(" ", $("<span class='collapse'>[-]</span><span> </span>")
+        var commentHeader = $("span.comhead", this);
+        // Prepend collapse icon
+        commentHeader.prepend(" ", $("<span class='collapse'>[-]</span><span> </span>")
                         .css({cursor: "pointer"})
                         .click(collapse)
                         .hover(function() { this.style.textDecoration = "underline"; },
                                function() { this.style.textDecoration = "none"; }));
         // Append number of comments
-        comhead.append(" ", $("<span class='numchildcomments'></span>"))
+        commentHeader.append(" ", $("<span class='numchildcomments'></span>"))
 
         // Extract comment IDs
-        var commentIDs = $("a[href*=item]", comhead);
+        var commentIDs = $("a[href*=item]", commentHeader);
         var id = commentIDs[0];
 
+        // Some comments don't have IDs, e.g. flagged comments
         if (typeof id === 'undefined' || id === null) {
-            // Some comments, such as flagged ones, don't have IDs
             id = guid();
         }
         else {

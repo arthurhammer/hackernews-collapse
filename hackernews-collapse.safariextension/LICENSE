@@ -1,13 +1,11 @@
 The MIT License (MIT)
 
 Copyright (c) 2015 Arthur Hammer
-https://github.com/ahammer-/hackernews-collapse
 
 Code in the file collapse.js is based on a bookmarklet written by
-Alexander Kirk .
+Alexander Kirk.
 
-Copyright (c) 2010 Alexander Kirk, http://alexander.kirk.at/
-http://alexander.kirk.at/2010/02/16/collapsible-threads-for-hacker-news/
+Copyright (c) 2010 Alexander Kirk
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
