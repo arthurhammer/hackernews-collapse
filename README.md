@@ -26,4 +26,4 @@ Based on a [bookmarklet by Alexander Kirk](https://alexander.kirk.at/2010/02/16/
 
 ## License
 
-MIT, see [hackernews-collapse.safariextension/LICENSE](hackernews-collapse.safariextension/License).
+MIT, see [hackernews-collapse.safariextension/LICENSE](hackernews-collapse.safariextension/LICENSE).
