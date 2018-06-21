@@ -23,3 +23,7 @@ Based on a [bookmarklet by Alexander Kirk](https://alexander.kirk.at/2010/02/16/
 - Option to hide number of child comments when collapsing
 - Fix for various layout problems where comments change their position on collapsing
 - Other bug fixes
+
+## License
+
+MIT, see [hackernews-collapse.safariextension/LICENSE](hackernews-collapse.safariextension/License).
